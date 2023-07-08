@@ -1,8 +1,8 @@
 # CURSO DE ECMASCRIPT: HISTORIA Y VERSIONES DE JAVASCRIPT
 ### ¿Qué se implementó en ES6 (ECMAscript 6)?
 1. [Let y Const](#let-and-const)
-2. [Arrow Functions](#arrow-function)
-3. [Strings](#strings)
+1. [Arrow Functions](#arrow-function)
+1. [Strings](#strings)
 4. [Parametros por Defecto](#default-params)
 5. [Desestructuración de Arrays y Objects](#destructuring-arrays-objects)
 6. [Spread Operator](#spread-operator)
