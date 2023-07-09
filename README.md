@@ -28,6 +28,10 @@
 3. [Finally](#finally)
 4. [Async Iterators](#async-iterators)
 
+### ¿Qué se implementó en ES10 (ECMAscript 10)?
+1. [Flat y Flat Map](#flat-y-flat-map)
+2. [Trim Start y Trim End](#trim-start-y-trim-end)
+
 # ECMAscript 6
 ## Let y Const
 ```javascript
@@ -577,3 +581,53 @@ Odalys
 */
 ```
 **[⬆ Volver a ES9](#qué-se-implementó-en-es9-ecmascript-9)**
+
+# ECMAscript 10
+## Flat y Flat Map
+```javascript
+// Flat
+const array1 = [1, 1, 2, 3, 4, [1, 3, 5, 6, [1, 2, 4]]]
+console.log(array1.flat(3));
+/*
+[
+  1, 1, 2, 3, 4,
+  1, 3, 5, 6, 1,
+  2, 4
+]
+
+El método flat de los array permite aplanar los elementos internos de un array permitiendo eliminar
+array internos. */
+
+// Flat Map
+const array2 = [1, 2, 3, 4, 5];
+console.log(array2.flatMap(v => [v, v * 2]));
+/*
+[
+  1, 2, 2, 4,  3,
+  6, 4, 8, 5, 10
+]
+
+Flat Map permite aplanar los elementos de un array en un nivel, pasando un función que mapeara cada
+elemento del nuevo array, este método no se podría utilizar para array que tengan más de un nivel de
+profundidad. Sin embargo, se pueden combinar los métodos flat y map para tener un mismo resultado.
+
+Si se quiere aplanar todo el arreglo sin pasar una profundidad exacta, se puede hacer uso de Infinity.
+*/
+
+const numbers = [1, 2, 3, 4, [5, 6, [7, 8, 9]]];
+console.log(numbers.flat(Infinity).map(num => num * 2)); // [ 2, 4, 6, 8, 10, 12, 14, 16, 18 ]
+```
+
+## Trim Start y Trim End
+```javascript
+// Trim start y Trim End
+const hello = '         Hello word!     ';
+console.log(hello.trimStart()); // 'Hello word!     '
+console.log(hello.trimEnd()); // '         Hello word!'
+console.log(hello.trimStart().trimEnd()); // 'Hello word!'
+/* Trim Start elimina todos los espacios vacios antes del string, al contrario de end que elimina todos
+los espacios vacios despues del string. Es por eso que al unir los 2 el string ocupa solmente lo necesario
+sin espacios vacios al inicio o al final, pero escribir .trimStart().trimEnd() es algo largo y menos legible
+por lo que se implementó el .trim() que elima los espacios vacios antes y despues del string. */
+console.log(hello.trim()); // 'Hello word!'
+```
