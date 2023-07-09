@@ -124,44 +124,219 @@ sintaxis del código. */
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Desestructuración de Arrays y Objects
 ```javascript
+// Arrays Destructuring
+let fruits = ['Manzana', 'Banana'];
+let [a, b] = fruits; /* ES6 nos presenta el Destructuring en este caso para los arrays se representa
+con '[varname, varname] = array' siendo esta una manera más sencilla en algunos casos de acceder a
+los valores del array. */
+console.log(a, b); // "Manzana", "Banana"
 
+// Objects Destructuring
+let user = { username: 'navarrete11', age: 21 };
+let { username, age } = user; /* ES6 nos presenta el Destructuring en este caso para los objetos se
+representa con '{ atributo, atributo } = objeto' siendo esta una manera mas sencilla de acceder a los
+valores del objeto. */
+console.log(username, age); // "navarrete11", 21
 ```
 ## Spread Operator
 ```javascript
+// Spread Operator
+let person = { name: 'Orlando', age: 21 };
+let country = 'NI';
 
+let data = {
+    id: 1,
+    ...person,
+    country,
+}; /* ES6 nos presenta algo llamado Spread Operator representado por '...', esto se refiere a acceder a
+todos los atributos y valores de un objeto o array, es decir, si tenemos:
+let user = { username: "navarrete11", age: 21 }
+y creamos
+let otherUserAtt = { ...user, country: "NI" }
+esto agregará todos los attributos y valores de user a otherUserAtt y adicionalmente agregara el atributo
+country mostrando como resultado => { username: "navarrete11", age: 21, country: "NI" }, de igual forma
+funciona para los arrays. */
+console.log(data); // { id: 1, name: "Orlando", age: 21, country: "NI" }
+
+// Rest
+function sum(num, ...values) { /* Como se puede observar uno de los parámetros es ...values, es decir que
+si el usuario manda como argumento (1, 1, 2, 3) values tendrá un valor de [1, 2, 3], esto no siempre es
+recomendado se recomienda analizar la lógica del código y verificar si el Spread Operator puede ser usado
+como parámetro. */
+    console.log(values); // [1, 2, 3]
+    let amount = 0;
+    for (let value of values) {
+        amount = amount + value;
+    }
+    console.log(num + amount);
+}
+
+sum(1, 1, 2, 3); // 7
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Objetos Literales
 ```javascript
-
+// Enahced Object Literals
+function newUser(user, age, country, uId) {
+    return {
+        /* Antes de ES6 era necesario hacer 'user: user' para retornar el valor, pero con Object Literals
+        solamente tendríamos que llamar la variable para retornar, en el caso de que se desee otro nombre
+        en el objeto o array a retornar si puede hacer como se mestra en el id. */
+        user,
+        age,
+        country,
+        id: uId
+    }
+}
+console.log(newUser("navarrete11", 21, "NI", 1));
+// { user: 'navarrete11', age: 21, country: 'NI', id: 1 }
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Promesas
 ```javascript
+// Promesas
+const anotherFunction = () => {
+    return new Promise((resolve, reject) => {
+        if (true) {
+            resolve('Hey!!')
+        } else {
+            reject('Whooops!');
+        }
+    })
+}
+// Las promesas a como dice su nombre cumple algo que pasará hoy, mañana o nunca.
 
+anotherFunction()
+    .then(response => console.log(response))
+    .catch(err => console.log(err)); // .then() 'Hey!!', .catch() 'Whooops!'.
+/* Como se explico anteriormente las promesas cumplen algo que pasará, en este caso si la promesa se
+cumple entra en .then() y ejecuta la lógica que nosotros hayamos descrito, en el caso de que la promesa
+no se cumpla entra en .catch() y ejecuta la lógica que nosotros hayamos descrito. */
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Clases
 ```javascript
+// Clases
 
+// Declarando clase
+class User {};
+
+// Instancia de una clase
+const newUser = new User();
+
+class User {
+    // Metodos
+    greeting() {
+        return 'Hola';
+    }
+};
+
+const newuser = new User();
+console.log(newuser.greeting()); // Hola
+
+// Constructor
+class User {
+    constructor() {
+        console.log('Nuevo Usuario');
+    }
+    greeting() {
+        return 'Hola';
+    }
+};
+
+const orlando = new User(); // Nuevo Usuario
+
+// This
+class User {
+    constructor(name) {
+        this.name = name;
+    }
+
+    //metodos
+    speak() {
+        return 'Hola';
+    }
+
+    greeting() {
+        return `${this.speak()} ${this.name}`;
+    }
+}
+
+const ana = new User("Ana");
+console.log(ana.greeting()); // Hola Ana
+
+// Setters y Getters
+class User {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    //metodos
+    speak() {
+        return 'Hola';
+    }
+
+    greeting() {
+        return `${this.speak()} ${this.name}`;
+    }
+
+    get uAge() {
+        return this.age;
+    }
+
+    set uAge(n) {
+        this.age = n;
+    }
+}
+
+const bebeloper = new User('Orlando', 21);
+console.log(bebeloper.greeting()); // Hola Orlando
+console.log(bebeloper.uAge); // 21
+console.log(bebeloper.uAge = 41); // 41
+console.log(`${bebeloper.greeting()}, Edad: ${bebeloper.uAge}`); // Hola Orlando, Edad: 41
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Modulos
 ```javascript
+// module.js
+const hello = () => {
+    console.log('¡Hola!');
+}
 
+export default hello;
 ```
 ```javascript
+import hello from "./module.js";
 
+hello(); // ¡Hola!
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Generadores
 ```javascript
+function* iterate(array) {
+    for (let value of array) {
+        yield value;
+    }
+}
 
+const it = iterate(['Orlando', 'Oscar', 'Odalys', 'Jessica', 'Alondra']);
+console.log(it.next().value); // Orlando
+console.log(it.next().value); // Oscar
+console.log(it.next().value); // Odalys
+console.log(it.next().value); // Jessica
+console.log(it.next().value); // Alondra
+console.log(it.next().value); // undefined
+console.log(it.next().value); // undefined
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Set y Add
 ```javascript
+const list = new Set();
+list.add('item 1'); // Esto agrega a la lista el elemento 'item 1'.
+list.add('item 2').add('item 3').add('item 4'); // Tambien puede hacerse de esta forma.
 
+console.log(list); // Set(4) { 'item 1', 'item 2', 'item 3', 'item 4' }
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 
