@@ -31,6 +31,8 @@
 ### ¿Qué se implementó en ES10 (ECMAscript 10)?
 1. [Flat y Flat Map](#flat-y-flat-map)
 2. [Trim Start y Trim End](#trim-start-y-trim-end)
+3. [Try Catch](#try-catch)
+4. [From Entries](#from-entries)
 
 # ECMAscript 6
 ## Let y Const
@@ -63,7 +65,7 @@ const fruits = () => {
 
 fruits();
 ```
-**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+**[🡅 Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 
 ## Arrow Functions
 ```javascript
@@ -83,7 +85,7 @@ const square = num => num * num; /* Esta forma sirve solamente si la función co
 código por lo que si la función llevará mas de una línea es recomendable usar una de las 2 formas
 anteriores. */
 ```
-**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+**[🡅 Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 
 ## Strings
 ```javascript
@@ -109,7 +111,7 @@ mas fácil de leer el código. */
 console.log(`Antes de ES6: ${lorem}`);
 console.log(`Con ES6: ${lorem2}`);
 ```
-**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+**[🡅 Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 
 ## Parametros por Defecto
 ```javascript
@@ -134,7 +136,7 @@ newAdmin("Orlando", 21, "Nicaragua"); // "Orlando", 21, "Nicaragua"
 /* Con ES6 se nos presente los paramatros por defecto de una manera distinta para hacer mas fácil la
 sintaxis del código. */
 ```
-**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+**[🡅 Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 
 ## Desestructuración de Arrays y Objects
 ```javascript
@@ -188,7 +190,7 @@ como parámetro. */
 
 sum(1, 1, 2, 3); // 7
 ```
-**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+**[🡅 Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 
 ## Objetos Literales
 ```javascript
@@ -207,7 +209,7 @@ function newUser(user, age, country, uId) {
 console.log(newUser("navarrete11", 21, "NI", 1));
 // { user: 'navarrete11', age: 21, country: 'NI', id: 1 }
 ```
-**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+**[🡅 Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 
 ## Promesas
 ```javascript
@@ -230,7 +232,7 @@ anotherFunction()
 cumple entra en .then() y ejecuta la lógica que nosotros hayamos descrito, en el caso de que la promesa
 no se cumpla entra en .catch() y ejecuta la lógica que nosotros hayamos descrito. */
 ```
-**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+**[🡅 Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 
 ## Clases
 ```javascript
@@ -314,7 +316,7 @@ console.log(bebeloper.uAge); // 21
 console.log(bebeloper.uAge = 41); // 41
 console.log(`${bebeloper.greeting()}, Edad: ${bebeloper.uAge}`); // Hola Orlando, Edad: 41
 ```
-**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+**[🡅 Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 
 ## Modulos
 ```javascript
@@ -330,7 +332,7 @@ import hello from "./module.js";
 
 hello(); // ¡Hola!
 ```
-**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+**[🡅 Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 
 ## Generadores
 ```javascript
@@ -349,7 +351,7 @@ console.log(it.next().value); // Alondra
 console.log(it.next().value); // undefined
 console.log(it.next().value); // undefined
 ```
-**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+**[🡅 Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 
 ## Set y Add
 ```javascript
@@ -359,7 +361,7 @@ list.add('item 2').add('item 3').add('item 4'); // Tambien puede hacerse de esta
 
 console.log(list); // Set(4) { 'item 1', 'item 2', 'item 3', 'item 4' }
 ```
-**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+**[🡅 Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 
 # ECMAscript 7
 ## Exponenciales y Array Includes
@@ -391,7 +393,7 @@ true
 esto sucede ya que el emoji '👨‍👩‍👦‍👦' esta conformado por otros emojis
 */
 ```
-**[⬆ Volver a ES7](#qué-se-implementó-en-es7-ecmascript-7)**
+**[🡅 Volver a ES7](#qué-se-implementó-en-es7-ecmascript-7)**
 
 # ECMAscript 8
 ## Objects Entries y Values
@@ -412,7 +414,7 @@ console.log(Object.entries(countries));
 const countries = { MX: 'Mexico', CO: 'Colombia' , CL: 'Chile', PE: 'Peru' };
 console.log(Object.values(countries)); // [ 'Mexico', 'Colombia', 'Chile', 'Peru' ]
 ```
-**[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
+**[🡅 Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
 
 ## String Padding
 ```javascript
@@ -425,7 +427,7 @@ console.log(string.padEnd(10, 'hi')); // Hellohihih
 /* PadEnd rellena al final del string las espacios en blanco con la palabra 'hi' al hello tener 5
 caracteres solo quedan 5 espacios es por eso que al final se agrega hihih. */
 ```
-**[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
+**[🡅 Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
 
 ## Trailing commas
 ```javascript
@@ -435,7 +437,7 @@ console.log(array); // [ 24, 35, 25, 24, <4 empty items>, 45 ]
 // Los Trailing commas se encargan de crear espacios vacios en los arryas para poder rellenarlos luego.
 console.log(array.length); // 8
 ```
-**[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
+**[🡅 Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
 
 ## Async Function
 ```javascript
@@ -464,7 +466,7 @@ solamente existe dentro de una función “async”, que hace que JavaScript esp
 promesa responda para continuar con el código dentro de ésta función, pero sin pausar la ejecución del
 siguiente código. */
 ```
-**[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
+**[🡅 Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
 
 # ECMAscript 9
 ## Regex
@@ -488,7 +490,7 @@ console.table(matchers);
 └─────────┴──────────────┘
 */
 ```
-**[⬆ Volver a ES9](#qué-se-implementó-en-es9-ecmascript-9)**
+**[🡅 Volver a ES9](#qué-se-implementó-en-es9-ecmascript-9)**
 
 ## Spread
 ```javascript
@@ -505,7 +507,7 @@ const objetoCopia = { ...objetoOriginal }; // El Spread lo que hace es una copia
 console.log(objetoReferencia === objetoOriginal); // true
 console.log(objetoOriginal === objetoCopia); // false
 ```
-**[⬆ Volver a ES9](#qué-se-implementó-en-es9-ecmascript-9)**
+**[🡅 Volver a ES9](#qué-se-implementó-en-es9-ecmascript-9)**
 
 ## Finally
 ```javascript
@@ -524,7 +526,7 @@ anotherFunction()
     .finally(() => console.log('Finalizado')); /* .then() 'Hey!!', .catch() 'Whooops!',
     .finally() 'Finalizado'. */
 ```
-**[⬆ Volver a ES9](#qué-se-implementó-en-es9-ecmascript-9)**
+**[🡅 Volver a ES9](#qué-se-implementó-en-es9-ecmascript-9)**
 
 ## Async Iterators
 ```javascript
@@ -580,7 +582,7 @@ Oscar
 Odalys
 */
 ```
-**[⬆ Volver a ES9](#qué-se-implementó-en-es9-ecmascript-9)**
+**[🡅 Volver a ES9](#qué-se-implementó-en-es9-ecmascript-9)**
 
 # ECMAscript 10
 ## Flat y Flat Map
@@ -617,6 +619,7 @@ Si se quiere aplanar todo el arreglo sin pasar una profundidad exacta, se puede 
 const numbers = [1, 2, 3, 4, [5, 6, [7, 8, 9]]];
 console.log(numbers.flat(Infinity).map(num => num * 2)); // [ 2, 4, 6, 8, 10, 12, 14, 16, 18 ]
 ```
+**[🡅 Volver a ES10](#qué-se-implementó-en-es10-ecmascript-10)**
 
 ## Trim Start y Trim End
 ```javascript
@@ -632,3 +635,44 @@ y menos legible por lo que se implementó el .trim() que elima los espacios vaci
 string. */
 console.log(hello.trim()); // 'Hello word!'
 ```
+**[🡅 Volver a ES10](#qué-se-implementó-en-es10-ecmascript-10)**
+
+## Try Catch
+```javascript
+// Antes de ES10
+try {
+    hello();
+} catch (error) {
+    console.log(error); // hello is not defined
+}
+
+// Con la actualización de ES10
+try {
+    anotherFn();
+} catch {
+    console.log('Esto es un error'); // Esto es un error
+} // El argumento catch (error) con ES10 es opcional.
+```
+**[🡅 Volver a ES10](#qué-se-implementó-en-es10-ecmascript-10)**
+
+## From Entries
+```javascript
+// From Entries
+const entries = new Map([
+    ['name', 'alexa'],
+    ['age', 24],
+]);
+console.log(entries); // Map(2) { 'name' => 'alexa', 'age' => 24 }
+console.log(Object.fromEntries(entries)); // { name: 'alexa', age: 24 }
+
+// Ahora se puede cambiar de un array a un objeto
+const entries1 = [['name', 'Sime'], ['age', 30]];
+console.log('Array original', entries1);
+// Array original [ [ 'name', 'Sime' ], [ 'age', 30 ] ]
+console.log('Array transformado a object', Object.fromEntries(entries1));
+// Array transformado a object { name: 'Sime', age: 30 }
+
+/* Object.fromEntries() transforma las entradas de un array en object, al contrario de Object.entries()
+que transforma un objeto en array */
+```
+**[🡅 Volver a ES10](#qué-se-implementó-en-es10-ecmascript-10)**
