@@ -11,5 +11,8 @@
   ],
   "author": "Orlando Navarrete <navarreteorlando57@gmail.com>",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "node-fetch": "^3.3.1"
+  }
 }
