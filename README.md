@@ -569,5 +569,11 @@ async function arrayOfNames(array) {
 
 const names = arrayOfNames(['Orlando', 'Oscar', 'Odalys']);
 console.log('After');
+/*
+After
+Orlando
+Oscar
+Odalys
+*/
 ```
 **[⬆ Volver a ES9](#qué-se-implementó-en-es9-ecmascript-9)**
