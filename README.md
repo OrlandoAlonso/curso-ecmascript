@@ -1,6 +1,6 @@
 # CURSO DE ECMASCRIPT: HISTORIA Y VERSIONES DE JAVASCRIPT
 ### ¿Qué se implementó en ES6 (ECMAscript 6)?
-1. [Let y Const](#let-and-const)
+1. [Let y Const](let-and-const)
 1. [Arrow Functions](#arrow-function)
 1. [Strings](#strings)
 4. [Parametros por Defecto](#default-params)
@@ -24,41 +24,103 @@
 
 # ECMAscript 6
 ## Let y Const
-![Let y Const](https://i.imgur.com/ID0NGCS.png "Let y Const")
+```javascript
+var lastName = "Navarrete";
+lastName = "Portillo";
+
+console.log(lastName);
+
+let fruit = "Manzana";
+fruit = "Kiwi";
+console.log(fruit);
+
+const animal = "Perro";
+animal = "Gato";
+console.log(animal); // ERROR: Al ser una constante su valor no puede ser reasignado
+
+const fruits = () => {
+    if (true) {
+        var fruit1 = "Manzana";
+        let fruit2 = "Kiwi";
+        const fruit3 = "Banana";
+    }
+
+    console.log(fruit1); /* Var tiene la particularidad de ser Global Scope, por ende, esta puede ser llamada fuera del if, pero
+    esta puede generar Hoisting, let y  const no. */
+    console.log(fruit2); // ERROR: Let se declara dentro del bloque, es decir, block scope
+    console.log(fruit3); // ERROR: Const se declara dentro del bloque, es decir, block scope
+}
+
+fruits();
+```
 ## Arrow Functions
-![Arrow Functions](https://i.imgur.com/xErlScS.png "Arrow Functions")
+```javascript
+
+```
 ## Strings
-![Strings](https://i.imgur.com/JeIGZjr.png "Strings")
+```javascript
+
+```
 ## Parametros por Defecto
-![Parametros por Defecto](https://i.imgur.com/8UthB4h.png "Parametros por Defecto")
+```javascript
+
+```
 ## Desestructuración de Arrays y Objects
-![Desestructuracion de Arrays y Objects](https://i.imgur.com/lnQvQtI.png "Desestructuracion de Arrays y Objects")
+```javascript
+
+```
 ## Spread Operator
-![Spread Operator](https://i.imgur.com/rbhIPyF.png "Spread Operator")
+```javascript
+
+```
 ## Objetos Literales
-![Objetos Literales](https://i.imgur.com/Aika2Yu.png "Objetos Literales")
+```javascript
+
+```
 ## Promesas
-![Promesas](https://i.imgur.com/RLG6oyl.png "Promesas")
+```javascript
+
+```
 ## Clases
-![Clases](https://i.imgur.com/2KTgR39.png "Clases")
+```javascript
+
+```
 ## Modulos
-![Modulos](https://i.imgur.com/4rRyZOd.png "Modulos")
-![Modulos](https://i.imgur.com/yzQPBjq.png "Modulos")
+```javascript
+
+```
+```javascript
+
+```
 ## Generadores
-![Generadores](https://i.imgur.com/A2mImMl.png "Generadores")
+```javascript
+
+```
 ## Set y Add
-![Set y Add](https://i.imgur.com/ClRWFw5.png "Set y Add")
+```javascript
+
+```
 
 # ECMAscript 7
 ## Exponenciales y Array Includes
-![Exponenciales y Array Includes](https://i.imgur.com/wl6xRto.png "Exponenciales y Array Includes")
+```javascript
+
+```
 
 # ECMAscript 8
 ## Objects Entries y Values
-![Objects Entries y Values](https://i.imgur.com/HVsvhZh.png "Objects Entries y Values")
+```javascript
+
+```
 ## String Padding
-![String Padding](https://i.imgur.com/TEV9BZF.png "String Padding")
+```javascript
+
+```
 ## Trailing commas
-![Trailing commas](https://i.imgur.com/Bv7MTGY.png "Trailing commas")
+```javascript
+
+```
 ## Async Function
-![Async Function](https://i.imgur.com/6AieSrf.png "Async Function")
+```javascript
+
+```
