@@ -118,7 +118,8 @@ function newAdmin(name = "Nombre", age = "Edad", country = "País") {
 newAdmin(); // Nombre, Edad, País
 newAdmin("Orlando", 21, "Nicaragua"); // "Orlando", 21, "Nicaragua"
 
-// Con ES6 se nos presente los paramatros por defecto de una manera distinta para hacer mas fácil la sintaxis del código.
+/* Con ES6 se nos presente los paramatros por defecto de una manera distinta para hacer mas fácil la
+sintaxis del código. */
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Desestructuración de Arrays y Objects
