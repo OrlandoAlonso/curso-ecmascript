@@ -1,26 +1,26 @@
 # CURSO DE ECMASCRIPT: HISTORIA Y VERSIONES DE JAVASCRIPT
 ### ¿Qué se implementó en ES6 (ECMAscript 6)?
-1. <a href='#let-y-const'>Let y Const</a>
-1. <a href='#arrow-function'>Arrow Functions</a>
-1. <a href='#strings'>Strings</a>
-4. <a href='#default-params'>Parametros por Defecto</a>
-5. <a href='#destructuring-arrays-objects'>Desestructuración de Arrays y Objects</a>
-6. <a href='#spread-operator'>Spread Operator</a>
-7. <a href='#object-literals'>Objetos Literales</a>
-8. <a href='#promises'>Promesas</a>
-9. <a href='#class'>Clases</a>
-10. <a href='#modules'>Modulos</a>
-11. <a href='#generators'>Generadores</a>
-12. <a href='#set-and-add'>Set y Add</a>
+1. [Let y Const](#let-y-const)
+2. [Arrow Functions](#arrow-functions)
+3. [Strings](#strings)
+4. [Parametros por Defecto](#parametros-por-defecto)
+5. [Desestructuración de Arrays y Objects](#desestructuración-de-arrays-y-objects)
+6. [Spread Operator](#spread-operator)
+7. [Objetos Literales](#objetos-literales)
+8. [Promesas](#promesas)
+11. [Clases](#clases)
+12. [Modulos](#modulos)
+13. [Generadores](#generadores)
+14. [Set y Add](#set-y-add)
 
 ### ¿Qué se implementó en ES7 (ECMAscript 7)?
-1. <a href='#exponentials-and-array-includes'>Exponenciales y Array Includes</a>
+1. [Exponenciales y Array Includes](#exponenciales-y-array-includes)
 
 ### ¿Qué se implementó en ES8 (ECMAscript 8)?
-1. <a href='#objects-entries-and-values'>Objects Entries y Values</a>
-2. <a href='#string-padding'>String Padding</a>
-3. <a href='#trailing-commas'>Trailing commas</a>
-4. <a href='#async-function'>Async Function</a>
+1. [Objects Entries y Values](#objects-entries-y-values)
+2. [String Padding](#string-padding)
+3. [Trailing commas](#trailing-commas)
+4. [Async Function](#async-function)
 
 # ECMAscript 6
 ## Let y Const
@@ -63,10 +63,13 @@ function square(num) {
 //Arrow Function
 const square = (num) => {
     return num * num;
-} // Esta sirve para las expresiones de funciones entre otras, pero como se puede observar es más legible que el function.
+} /* Esta sirve para las expresiones de funciones entre otras, pero como se puede observar es más legible
+que el function. */
 
 // Return implícito
-const square = num => num * num; // Esta forma sirve solamente si la función contará con una sola línea de código por lo que si la función llevará mas de una línea es recomendable usar una de las 2 formas anteriores.
+const square = num => num * num; /* Esta forma sirve solamente si la función contará con una sola línea de
+código por lo que si la función llevará mas de una línea es recomendable usar una de las 2 formas
+anteriores. */
 ```
 ## Strings
 ```javascript
