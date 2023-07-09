@@ -100,8 +100,27 @@ console.log(`Con ES6: ${lorem2}`);
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Parametros por Defecto
 ```javascript
+// Antes de ES6
+function newUser(name, age, country) {
+    let nombre = name || "Nombre";
+    let edad = age || "Edad";
+    let ciudad = country || "País";
+    console.log(nombre, edad, ciudad);
+}
 
+newUser(); // Nombre, Edad, País
+newUser("Orlando", 21, "Nicaragua"); // "Orlando", 21, "Nicaragua"
+
+function newAdmin(name = "Nombre", age = "Edad", country = "País") {
+    console.log(name, age, country);
+}
+
+newAdmin(); // Nombre, Edad, País
+newAdmin("Orlando", 21, "Nicaragua"); // "Orlando", 21, "Nicaragua"
+
+// Con ES6 se nos presente los paramatros por defecto de una manera distinta para hacer mas fácil la sintaxis del código.
 ```
+**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Desestructuración de Arrays y Objects
 ```javascript
 
@@ -110,18 +129,22 @@ console.log(`Con ES6: ${lorem2}`);
 ```javascript
 
 ```
+**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Objetos Literales
 ```javascript
 
 ```
+**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Promesas
 ```javascript
 
 ```
+**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Clases
 ```javascript
 
 ```
+**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Modulos
 ```javascript
 
@@ -129,35 +152,43 @@ console.log(`Con ES6: ${lorem2}`);
 ```javascript
 
 ```
+**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Generadores
 ```javascript
 
 ```
+**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 ## Set y Add
 ```javascript
 
 ```
+**[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
 
 # ECMAscript 7
 ## Exponenciales y Array Includes
 ```javascript
 
 ```
+**[⬆ Volver a ES7](#qué-se-implementó-en-es7-ecmascript-7)**
 
 # ECMAscript 8
 ## Objects Entries y Values
 ```javascript
 
 ```
+**[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
 ## String Padding
 ```javascript
 
 ```
+**[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
 ## Trailing commas
 ```javascript
 
 ```
+**[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
 ## Async Function
 ```javascript
 
 ```
+**[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
