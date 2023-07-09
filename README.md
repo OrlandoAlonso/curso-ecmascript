@@ -517,7 +517,8 @@ const anotherFunction = () => {
 anotherFunction()
     .then(response => console.log(response))
     .catch(err => console.log(err))
-    .finally(() => console.log('Finalizado')); // .then() 'Hey!!', .catch() 'Whooops!'.
+    .finally(() => console.log('Finalizado')); /* .then() 'Hey!!', .catch() 'Whooops!',
+    .finally() 'Finalizado'. */
 ```
 **[⬆ Volver a ES9](#qué-se-implementó-en-es9-ecmascript-9)**
 
