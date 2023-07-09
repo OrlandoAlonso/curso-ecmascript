@@ -43,6 +43,12 @@
 6. [Match All](#match-all)
 7. [Dynamic Import](#dynamic-import)
 
+### ¿Qué se implementó en ES12 (ECMAscript 12)?
+1. [Numeric Separators](#numeric-separators)
+2. [Replace All](#replace-all)
+3. [Promise Any](#promise-any)
+4. [Metodos Privados](#metodos-privados)
+
 # ECMAscript 6
 ## Let y Const
 ```javascript
@@ -911,3 +917,26 @@ button.addEventListener('click', async function() {
 **[🡅 Volver a ES11](#qué-se-implementó-en-es11-ecmascript-11)**
 
 # ECMAscript 12
+## Numeric Separators
+```javascript
+
+```
+**[🡅 Volver a ES12](#qué-se-implementó-en-es12-ecmascript-12)**
+
+## Replace All
+```javascript
+
+```
+**[🡅 Volver a ES12](#qué-se-implementó-en-es12-ecmascript-12)**
+
+## Promise Any
+```javascript
+
+```
+**[🡅 Volver a ES12](#qué-se-implementó-en-es12-ecmascript-12)**
+
+## Metodos Privados
+```javascript
+
+```
+**[🡅 Volver a ES12](#qué-se-implementó-en-es12-ecmascript-12)**
