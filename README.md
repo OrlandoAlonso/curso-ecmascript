@@ -49,6 +49,10 @@
 3. [Promise Any](#promise-any)
 4. [Metodos Privados](#metodos-privados)
 
+### ¿Qué se implementó en ES13 (ECMAscript 13)?
+1. [At](#at)
+2. [Top Lavel Await](#top-lavel-await)
+
 # ECMAscript 6
 ## Let y Const
 ```javascript
@@ -1009,3 +1013,117 @@ class User {
 // Para hacer privado metodos y atributos de una clase se agrega ( # ) delante de esta.
 ```
 **[🡅 Volver a ES12](#qué-se-implementó-en-es12-ecmascript-12)**
+
+# ECMAscript 13
+## At
+```javascript
+/* At
+El método at de arrays sirve para acceder a los elementos a partir del índice.
+
+array.at(índice)
+
+Índices positivos y negativos en arrays
+Los índices positivos comienzan desde 0 hasta la longitud total menos uno, de izquierda a derecha del
+array. El índice 0 es la primera posición.
+
+Los índices negativos comienzan desde -1 hasta el negativo de la longitud total del array, de derecha a
+izquierda. El índice -1 es la última posición.
+[-lenght, ...,  -3, -2, -1]
+
+Cómo utilizar el método at
+La utilidad más importante de este método es para manejar índices negativos. Algo que no se puede con la
+notación de corchetes. */
+const array = ["one", "two", "three", "four", "five", "six"];
+
+console.log(array[array.length - 1]); // six
+console.log(array.at(-1)); // six
+
+// Otro ejemplo
+const nombres = ["Andres", "Valeria", "Ana", "Ramiro", "Richard"]
+
+console.log(nombres.at(-1)); // "Richard"
+console.log(nombres[-1]); // undefined
+console.log(nombres.at(-3)); // "Ana"
+console.log(nombres[nombres.length - 1]); // "Richard"
+/* Puedes utilizar la notación de corchetes, pero necesitas obtener la longitud del array y restarle una
+unidad, generando mucho código que puede volverse difícil de leer */
+```
+**[🡅 Volver a ES13](#qué-se-implementó-en-es13-ecmascript-13)**
+
+## Top Lavel Await
+```javascript
+import fetch from "node-fetch";
+
+const response = await fetch('https://api.escuelajs.co/api/v1/products');
+const products = await response.json();
+
+export { products };
+/* Top Lavel Await
+Top level await permite utilizar la palabra reservada await, sin estar dentro de una función asíncrona
+con async. Sin embargo, únicamente se puede utilizar await en la parte superior del archivo de un módulo.
+
+Anterior a ECMAScript 13, cuando se introdujo funciones asíncronas, si utilizabas await fuera de async,
+existirá un error de sintáxis.
+
+// Error
+await fetch(URL)
+// SyntaxError: await is only valid in async function
+
+Ahora, con top level await esto es posible, sin ningún error. Esto puede servir para importaciones de manera
+dinámica o iniciar la conexión de tus bases de datos. Siempre y cuando respetes que debe estar en la parte
+encima del archivo de tipo módulo. */
+```
+```javascript
+import { products } from "./products.js";
+
+console.log(products);
+/*
+[
+  {
+    id: 1,
+    title: 'Refined Bronze Salad',
+    price: 158,
+    description: 'The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With
+    the Goodness of 100% Natural Ingredients',
+    images: [
+      'https://picsum.photos/640/640?r=5642',
+      'https://picsum.photos/640/640?r=8668',
+      'https://picsum.photos/640/640?r=8041'
+    ],
+    creationAt: '2023-07-09T04:24:17.000Z',
+    updatedAt: '2023-07-09T04:24:17.000Z',
+    category: {
+      id: 4,
+      name: 'Shoes',
+      image: 'https://picsum.photos/640/640?r=7260',
+      creationAt: '2023-07-09T04:24:17.000Z',
+      updatedAt: '2023-07-09T04:24:17.000Z'
+    }
+  },
+  {
+    id: 2,
+    title: 'Oriental Metal Cheese',
+    price: 992,
+    description: 'New range of formal shirts are designed keeping you in mind. With fits and styling that will
+    make you stand apart',
+    images: [
+      'https://picsum.photos/640/640?r=8195',
+      'https://picsum.photos/640/640?r=9356',
+      'https://picsum.photos/640/640?r=6752'
+    ],
+    creationAt: '2023-07-09T04:24:17.000Z',
+    updatedAt: '2023-07-09T04:24:17.000Z',
+    category: {
+      id: 2,
+      name: 'Electronics',
+      image: 'https://picsum.photos/640/640?r=3503',
+      creationAt: '2023-07-09T04:24:17.000Z',
+      updatedAt: '2023-07-09T04:24:17.000Z'
+    }
+  },
+  ... 199 more items
+]
+*/
+console.log('Hey'); // Hey
+```
+**[🡅 Volver a ES13](#qué-se-implementó-en-es13-ecmascript-13)**
