@@ -22,7 +22,7 @@
 3. [Trailing commas](#trailing-commas)
 4. [Async Function](#async-function)
 
-### ¿Qué se implementó en ES8 (ECMAscript 8)?
+### ¿Qué se implementó en ES9 (ECMAscript 9)?
 1. [Regex](#regex)
 2. [Spread](#spread)
 3. [Finally](#finally)
