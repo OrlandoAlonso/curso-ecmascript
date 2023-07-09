@@ -409,7 +409,7 @@ caracteres solo quedan 5 espacios es por eso que al final se agrega hihih. */
 // Trailing commas
 const array = [24, 35, 25, 24, , , , , 45];
 console.log(array); // [ 24, 35, 25, 24, <4 empty items>, 45 ]
-// Los Trailing commas se encargan de crear espacios vacios en los arryas para poder rellenarlos leugo.
+// Los Trailing commas se encargan de crear espacios vacios en los arryas para poder rellenarlos luego.
 console.log(array.length); // 8
 ```
 **[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
