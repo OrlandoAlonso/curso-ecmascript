@@ -375,21 +375,69 @@ esto sucede ya que el emoji '👨‍👩‍👦‍👦' esta conformado por otro
 # ECMAscript 8
 ## Objects Entries y Values
 ```javascript
+// Object Entries
+const countries = { MX: 'Mexico', CO: 'Colombia' , CL: 'Chile', PE: 'Peru' };
+console.log(Object.entries(countries));
+/*
+[
+  [ 'MX', 'Mexico' ],
+  [ 'CO', 'Colombia' ],
+  [ 'CL', 'Chile' ],
+  [ 'PE', 'Peru' ]
+]
+*/
 
+// Object Values
+const countries = { MX: 'Mexico', CO: 'Colombia' , CL: 'Chile', PE: 'Peru' };
+console.log(Object.values(countries)); // [ 'Mexico', 'Colombia', 'Chile', 'Peru' ]
 ```
 **[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
 ## String Padding
 ```javascript
-
+// String padding
+const string = 'Hello';
+console.log(string.padStart(10, 'hi')); // hihihHello
+/* PadStart rellena al inicio del string las espacios en blanco con la palabra 'hi' al hello tener 5
+caracteres solo quedan 5 espacios es por eso que al inicio se agrega hihih. */
+console.log(string.padEnd(10, 'hi')); // Hellohihih
+/* PadEnd rellena al final del string las espacios en blanco con la palabra 'hi' al hello tener 5
+caracteres solo quedan 5 espacios es por eso que al final se agrega hihih. */
 ```
 **[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
 ## Trailing commas
 ```javascript
-
+// Trailing commas
+const array = [24, 35, 25, 24, , , , , 45];
+console.log(array); // [ 24, 35, 25, 24, <4 empty items>, 45 ]
+// Los Trailing commas se encargan de crear espacios vacios en los arryas para poder rellenarlos leugo.
+console.log(array.length); // 8
 ```
 **[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
 ## Async Function
 ```javascript
+// Async Function
+const fnAsycn = () => {
+    return new Promise((resolve, reject) => {
+        (true)
+            ? setTimeout(() => resolve('Asycn!!'), 2000)
+            : reject(new Error('Error!!'));
+    });
+}
 
+const anotherFn = async () => {
+    const something = await fnAsycn();
+    console.log(something);
+    console.log('Hello!!');
+}
+
+console.log('Before');
+anotherFn();
+console.log('After');
+
+/* “async-await” es una manera de trabajar de una forma mas cómoda con promesas, la palabra reservada
+“async” quiere decir que una función siempre devolverá una promesa. Ahora la palabra reservada “await”,
+solamente existe dentro de una función “async”, que hace que JavaScript espere hasta que la función
+promesa responda para continuar con el código dentro de ésta función, pero sin pausar la ejecución del
+siguiente código. */
 ```
 **[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
