@@ -1084,8 +1084,8 @@ console.log(products);
     id: 1,
     title: 'Refined Bronze Salad',
     price: 158,
-    description: 'The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With
-    the Goodness of 100% Natural Ingredients',
+    description: 'The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients.
+    With the Goodness of 100% Natural Ingredients',
     images: [
       'https://picsum.photos/640/640?r=5642',
       'https://picsum.photos/640/640?r=8668',
@@ -1105,8 +1105,8 @@ console.log(products);
     id: 2,
     title: 'Oriental Metal Cheese',
     price: 992,
-    description: 'New range of formal shirts are designed keeping you in mind. With fits and styling that will
-    make you stand apart',
+    description: 'New range of formal shirts are designed keeping you in mind. With fits and styling
+    that will make you stand apart',
     images: [
       'https://picsum.photos/640/640?r=8195',
       'https://picsum.photos/640/640?r=9356',
