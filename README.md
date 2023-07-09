@@ -343,7 +343,32 @@ console.log(list); // Set(4) { 'item 1', 'item 2', 'item 3', 'item 4' }
 # ECMAscript 7
 ## Exponenciales y Array Includes
 ```javascript
+// Exponenciales
+const data = 3 ** 4;
+console.log(data); // 81
+```
 
+```javascript
+// Arrays Includes
+let numbers = [1, 2, 3, 4, 6, 7, 8];
+console.log(numbers.includes(4)); // true
+console.log(numbers.includes(9)); // false
+
+const list = ['Orlando', 'Oscar', 'Odalys'];
+console.log(list.includes('Oscar')); // true
+console.log(list.includes('oscar')); // false
+console.log(list.includes('Jessica')); // false
+
+let familyEmoji = [..."👨‍👩‍👦‍👦"]
+console.log(`${familyEmoji.includes("👨")}
+${familyEmoji.includes("👩")}
+${familyEmoji.includes("👦")}`);
+/*
+true
+true
+true
+esto sucede ya que el emoji '👨‍👩‍👦‍👦' esta conformado por otros emojis
+*/
 ```
 **[⬆ Volver a ES7](#qué-se-implementó-en-es7-ecmascript-7)**
 
