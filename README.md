@@ -22,6 +22,12 @@
 3. [Trailing commas](#trailing-commas)
 4. [Async Function](#async-function)
 
+### ¿Qué se implementó en ES8 (ECMAscript 8)?
+1. [Regex](#regex)
+2. [Spread](#spread)
+3. [Finally](#finally)
+4. [Async Iterators](#async-iterators)
+
 # ECMAscript 6
 ## Let y Const
 ```javascript
@@ -54,6 +60,7 @@ const fruits = () => {
 fruits();
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+
 ## Arrow Functions
 ```javascript
 // Normal Function
@@ -73,6 +80,7 @@ código por lo que si la función llevará mas de una línea es recomendable usa
 anteriores. */
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+
 ## Strings
 ```javascript
 let hola = "Hola";
@@ -98,6 +106,7 @@ console.log(`Antes de ES6: ${lorem}`);
 console.log(`Con ES6: ${lorem2}`);
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+
 ## Parametros por Defecto
 ```javascript
 // Antes de ES6
@@ -122,6 +131,7 @@ newAdmin("Orlando", 21, "Nicaragua"); // "Orlando", 21, "Nicaragua"
 sintaxis del código. */
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+
 ## Desestructuración de Arrays y Objects
 ```javascript
 // Arrays Destructuring
@@ -138,6 +148,7 @@ representa con '{ atributo, atributo } = objeto' siendo esta una manera mas senc
 valores del objeto. */
 console.log(username, age); // "navarrete11", 21
 ```
+
 ## Spread Operator
 ```javascript
 // Spread Operator
@@ -174,6 +185,7 @@ como parámetro. */
 sum(1, 1, 2, 3); // 7
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+
 ## Objetos Literales
 ```javascript
 // Enahced Object Literals
@@ -192,6 +204,7 @@ console.log(newUser("navarrete11", 21, "NI", 1));
 // { user: 'navarrete11', age: 21, country: 'NI', id: 1 }
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+
 ## Promesas
 ```javascript
 // Promesas
@@ -214,6 +227,7 @@ cumple entra en .then() y ejecuta la lógica que nosotros hayamos descrito, en e
 no se cumpla entra en .catch() y ejecuta la lógica que nosotros hayamos descrito. */
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+
 ## Clases
 ```javascript
 // Clases
@@ -297,6 +311,7 @@ console.log(bebeloper.uAge = 41); // 41
 console.log(`${bebeloper.greeting()}, Edad: ${bebeloper.uAge}`); // Hola Orlando, Edad: 41
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+
 ## Modulos
 ```javascript
 // module.js
@@ -312,6 +327,7 @@ import hello from "./module.js";
 hello(); // ¡Hola!
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+
 ## Generadores
 ```javascript
 function* iterate(array) {
@@ -330,6 +346,7 @@ console.log(it.next().value); // undefined
 console.log(it.next().value); // undefined
 ```
 **[⬆ Volver a ES6](#qué-se-implementó-en-es6-ecmascript-6)**
+
 ## Set y Add
 ```javascript
 const list = new Set();
@@ -392,6 +409,7 @@ const countries = { MX: 'Mexico', CO: 'Colombia' , CL: 'Chile', PE: 'Peru' };
 console.log(Object.values(countries)); // [ 'Mexico', 'Colombia', 'Chile', 'Peru' ]
 ```
 **[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
+
 ## String Padding
 ```javascript
 // String padding
@@ -404,6 +422,7 @@ console.log(string.padEnd(10, 'hi')); // Hellohihih
 caracteres solo quedan 5 espacios es por eso que al final se agrega hihih. */
 ```
 **[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
+
 ## Trailing commas
 ```javascript
 // Trailing commas
@@ -413,6 +432,7 @@ console.log(array); // [ 24, 35, 25, 24, <4 empty items>, 45 ]
 console.log(array.length); // 8
 ```
 **[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
+
 ## Async Function
 ```javascript
 // Async Function
@@ -441,3 +461,112 @@ promesa responda para continuar con el código dentro de ésta función, pero si
 siguiente código. */
 ```
 **[⬆ Volver a ES8](#qué-se-implementó-en-es8-ecmascript-8)**
+
+# ECMAscript 9
+## Regex
+```javascript
+const regex = /(\d{4})-(\d{2})-(\d{2})/; /* Esto representa una fecha, es decir, AAAA-MM-DD siendo AAAA
+el año, MM el mes y DD el día. */
+const matchers = regex.exec('2023-01-01') /* Esto ejecuta el regex para inicializar el valor de matchers
+como se muestra en la consola. */
+console.table(matchers);
+/*
+┌─────────┬──────────────┐
+| (index) │    Values    │
+├─────────┼──────────────┤
+│    0    │ '2023-01-01' │
+│    1    │    '2023'    │
+│    2    │     '01'     │
+│    3    │     '01'     │
+│  index  │      0       │
+│  input  │ '2023-01-01' │
+│ groups  │  undefined   │
+└─────────┴──────────────┘
+*/
+```
+**[⬆ Volver a ES9](#qué-se-implementó-en-es9-ecmascript-9)**
+
+## Spread
+```javascript
+const user = { username: 'navarrete11', age: 21, coutry: 'NI' };
+const { username, ...values } = user; // ES9
+console.log(username); // navarrete11
+console.log(values); // { age: 21, coutry: 'NI' }
+
+// Con esto podemos tener la opción de verificar cual es el objeto original
+const objetoOriginal = { a: 1, b: 2 };
+const objetoReferencia = objetoOriginal;
+const objetoCopia = { ...objetoOriginal }; // El Spread lo que hace es una copia del objeto original.
+
+console.log(objetoReferencia === objetoOriginal); // true
+console.log(objetoOriginal === objetoCopia); // false
+```
+**[⬆ Volver a ES9](#qué-se-implementó-en-es9-ecmascript-9)**
+
+## Finally
+```javascript
+// Promises Finally
+const anotherFunction = () => {
+    return new Promise((resolve, reject) => {
+        (true)
+            ? resolve('Hey!!')
+            : reject('Whooops!');
+    })
+}
+
+anotherFunction()
+    .then(response => console.log(response))
+    .catch(err => console.log(err))
+    .finally(() => console.log('Finalizado')); // .then() 'Hey!!', .catch() 'Whooops!'.
+```
+**[⬆ Volver a ES9](#qué-se-implementó-en-es9-ecmascript-9)**
+
+## Async Iterators
+```javascript
+async function* anotherGenerator () {
+    yield await Promise.resolve(1);
+    yield await Promise.resolve(2);
+    yield await Promise.resolve(3);
+}
+
+const other = anotherGenerator();
+other.next().then(response => console.log(response.value));
+other.next().then(response => console.log(response.value));
+other.next().then(response => console.log(response.value));
+console.log('Hello');
+/*
+Hello
+1
+2
+3
+
+Si eliminamos el async y await daría el siguiente resultado
+
+function* anotherGenerator () {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+const other = anotherGenerator();
+console.log(other.next().value);
+console.log(other.next().value);
+console.log(other.next().value);
+console.log('Hello');
+
+1
+2
+3
+Hello
+*/
+
+async function arrayOfNames(array) {
+    for await (let value of array) {
+        console.log(value);
+    }
+}
+
+const names = arrayOfNames(['Orlando', 'Oscar', 'Odalys']);
+console.log('After');
+```
+**[⬆ Volver a ES9](#qué-se-implementó-en-es9-ecmascript-9)**
