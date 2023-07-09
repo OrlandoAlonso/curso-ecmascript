@@ -1,6 +1,6 @@
 # CURSO DE ECMASCRIPT: HISTORIA Y VERSIONES DE JAVASCRIPT
 ### ¿Qué se implementó en ES6 (ECMAscript 6)?
-1. [Let y Const](let-and-const)
+1. <a href='#let-y-const'>Let y Const</a>
 1. [Arrow Functions](#arrow-function)
 1. [Strings](#strings)
 4. [Parametros por Defecto](#default-params)
