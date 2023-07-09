@@ -963,8 +963,8 @@ en el servidor. */
 ## Promise Any
 ```javascript
 /* Promises Any
-Promise.any() es otra forma de manejar varias promesas, que retornará la primera promesa que sea resuelta y
-rebotará si todas las promesas son rechazadas. */
+Promise.any() es otra forma de manejar varias promesas, que retornará la primera promesa que sea resuelta
+y rebotará si todas las promesas son rechazadas. */
 
 const promise1 = Promise.reject("Ups promesa 1 falló")
 const promise2 = Promise.reject("Ups promesa 2 falló")
