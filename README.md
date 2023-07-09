@@ -919,24 +919,93 @@ button.addEventListener('click', async function() {
 # ECMAscript 12
 ## Numeric Separators
 ```javascript
+/* Numeric Separators
+Los separadores numéricos ayudan a la legibilidad de cantidades con varias cifras. Se utiliza el caracter
+guion bajo ( _ ) para separar las cifras, y no afecta a la ejecución del programa.
 
+Lo ideal es separar cada 3 cifras, para visualizar los miles, millones, billones, etc. */
+
+// 🡇 Baja legibilidad
+const number = 100000000000;
+console.log(number); // 100000000000
+
+// ✅ Alta legibilidad
+const value = 100_000_000_000;
+console.log(value); // 100000000000
+// De esta manera puedes identificar el número rápidamente.
 ```
 **[🡅 Volver a ES12](#qué-se-implementó-en-es12-ecmascript-12)**
 
 ## Replace All
 ```javascript
+const string = 'Javascript es un maravilloso lenguaje de programación';
+const replaceString = string.replace('Javascript', 'Typescript');
+console.log(string); // Javascript es un maravilloso lenguaje de programación
+console.log(replaceString); // Typescript es un maravilloso lenguaje de programación
 
+/* Este metodo existia antes de ES12, sin embargo este método únicamente cambiaba la primera coincidencia
+que encontrara en el string. */
+const texto = 'Javascript es el mejor lenguaje. Javascript puede vivir en el navegador y en el servidor.';
+const replaceTexto = texto.replace('Javascript', 'Typescript');
+console.log(texto); /* Javascript es el mejor lenguaje. Javascript puede vivir en el navegador y en el
+servidor. */
+console.log(replaceTexto); /* Typescript es el mejor lenguaje. Javascript puede vivir en el navegador y en
+el servidor. */
+
+/* Con ES12 vino al rescate replaceAll(), este método cambia todas las coincidencias que encuentre en el
+string. */
+const replaceAllTexto = texto.replaceAll('Javascript', 'Typescript');
+console.log(replaceAllTexto); /* Typescript es el mejor lenguaje. Typescript puede vivir en el navegador y
+en el servidor. */
 ```
 **[🡅 Volver a ES12](#qué-se-implementó-en-es12-ecmascript-12)**
 
 ## Promise Any
 ```javascript
+/* Promises Any
+Promise.any() es otra forma de manejar varias promesas, que retornará la primera promesa que sea resuelta y
+rebotará si todas las promesas son rechazadas. */
 
+const promise1 = Promise.reject("Ups promesa 1 falló")
+const promise2 = Promise.reject("Ups promesa 2 falló")
+const promise3 = Promise.resolve("Promesa 3")
+
+Promise.any([promise1, promise2, promise3])
+    .then(response => console.log(response))
+    .catch(error => console.log(error)); // Promesa 3
+
+/* Si const promise3 = Promise.reject("Promesa 3"), mostrará en consola lo siguiente:
+[AggregateError: All promises were rejected] {
+    [errors]: [ 'Ups promesa 1 falló', 'Ups promesa 2 falló', 'Promesa 3' ]
+} */
 ```
 **[🡅 Volver a ES12](#qué-se-implementó-en-es12-ecmascript-12)**
 
 ## Metodos Privados
 ```javascript
+class User {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
 
+    //metodos
+    #speak() {
+        return 'Hola';
+    }
+
+    greeting() {
+        return `${this.speak()} ${this.name}`;
+    }
+
+    get #uAge() {
+        return this.age;
+    }
+
+    set #uAge(n) {
+        this.age = n;
+    }
+}
+// Para hacer privado metodos y atributos de una clase se agrega ( # ) delante de esta.
 ```
 **[🡅 Volver a ES12](#qué-se-implementó-en-es12-ecmascript-12)**
