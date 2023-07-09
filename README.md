@@ -34,6 +34,15 @@
 3. [Try Catch](#try-catch)
 4. [From Entries](#from-entries)
 
+### ¿Qué se implementó en ES11 (ECMAscript 11)?
+1. [Optional Chaining](#optional-chaining)
+2. [Big Int](#big-int)
+3. [Nullish](#nullish)
+4. [Promise All Settled](#promise-all-settled)
+5. [Global This](#global-this)
+6. [Match All](#match-all)
+7. [Dynamic Import](#dynamic-import)
+
 # ECMAscript 6
 ## Let y Const
 ```javascript
@@ -676,3 +685,226 @@ console.log('Array transformado a object', Object.fromEntries(entries1));
 que transforma un objeto en array */
 ```
 **[🡅 Volver a ES10](#qué-se-implementó-en-es10-ecmascript-10)**
+
+# ECMAscript 11
+## Optional Chaining
+```javascript
+// Optional Chaining
+const users = {
+    gndx: {
+        country: "MX"
+    },
+    ana: {
+        country: "CO"
+    }
+}
+console.log(users.gndx.country); // MX
+console.log(users.ana.country); // CO
+console.log(users?.bebeloper?.country); // undefined
+/* Optional Chaining verifica que el atributo del objeto existe, retornando undefined si esta no
+existe. */
+/*
+NOTA:
+No abuses del encadenamiento opcional
+El encadenamiento opcional se debe utilizar únicamente cuando probablemente un valor no exista.
+
+Por ejemplo, en un objeto usuario que siempre existe, pero la propiedad redes es opcional, entonces
+se debería escribir usuario.redes?.facebook y no usuario?.redes?.facebook.
+
+Si abusas del encadenamiento opcional y existe un error en un objeto, el programa podría “ocultarlo”
+por un undefined, provocando que el debugging sea más complicado.
+*/
+```
+**[🡅 Volver a ES11](#qué-se-implementó-en-es11-ecmascript-11)**
+
+## Big Int
+```javascript
+// Manejo de numeros enteros muy grandes
+const aBigNumber = 8907245920742093847n;
+const anotherBigNumber = BigInt(8907245920742093847);
+console.log(aBigNumber); // 8907245920742093847n
+console.log(anotherBigNumber); // 8907245920742093847n
+/*
+JavaScript tiene límites numéricos, un máximo Number.MAX_SAFE_INTEGER y un mínimo
+Number.MIN_SAFE_INTEGER. Fuera de estos límites, los cálculos matemáticos pueden fallar y mostrar
+resultados erróneos. Con BigInt esto se resuelve. */
+```
+**[🡅 Volver a ES11](#qué-se-implementó-en-es11-ecmascript-11)**
+
+## Nullish
+```javascript
+const anotherNumber = 1;
+const validate = anotherNumber ?? 'Este valor es nulo';
+console.log(validate); // 1
+
+// Con la variable en nulo
+const anotherNumberNull = null;
+const validateNull = anotherNumberNull ?? 'Este valor es nulo';
+console.log(validateNull); // Este valor es nulo
+/*
+El operador Nullish verifica si el valor es nulo.
+
+Diferencia entre el operador OR y el Nullish coalescing
+🔨 El operador OR (||) evalúa un valor falsey. Un valor falsy es aquel que es falso en un contexto
+booleano, estos son: 0, "" (string vacío), false, NaN, undefined o null.
+.
+Puede que recibas una variable con un valor falsy que necesites asignarle a otra variable, que no sea
+null o undefined. Si evalúas con el operador OR, este lo cambiará, provocando un resultado erróneo.
+*/
+const id = 0;
+const orId = id || "Sin id";
+const nullishId = id ?? "Sin id";
+
+console.log( orId ); //  'Sin id'
+console.log( nullishId );  // 0
+```
+**[🡅 Volver a ES11](#qué-se-implementó-en-es11-ecmascript-11)**
+
+## Promise All Settled
+```javascript
+// Promise All Settled
+const promise1 = new Promise((resolve, reject) => reject('Reject'));
+const promise2 = new Promise((resolve, reject) => resolve('Resolve'));
+const promise3 = new Promise((resolve, reject) => resolve('Resolve 2'));
+
+Promise.allSettled([promise1, promise2, promise3])
+    .then(response => console.table(response));
+/*
+┌─────────┬─────────────┬──────────┬─────────────┐
+│ (index) │   status    │  reason  │    value    │
+├─────────┼─────────────┼──────────┼─────────────┤
+│    0    │ 'rejected'  │ 'Reject' │             │
+│    1    │ 'fulfilled' │          │  'Resolve'  │
+│    2    │ 'fulfilled' │          │ 'Resolve 2' │
+└─────────┴─────────────┴──────────┴─────────────┘
+
+Tambien existe Promise.all() El método Promise.all(iterable) devuelve una promesa que termina
+correctamente cuando todas las promesas en el argumento iterable han sido concluídas con éxito, o bien
+rechaza la petición con el motivo pasado por la primera promesa que es rechazada.
+La diferencia con Promise.allSettled() es que esta ejecuta todas las promesas sin importar si son
+rechazadas o no. */
+```
+**[🡅 Volver a ES11](#qué-se-implementó-en-es11-ecmascript-11)**
+
+## Global This
+```javascript
+console.log(window); // window is not defined => del lado del navegador
+/* Si escribimos window en la consola del navegador esto nos muestra un numero de metodos y atributos,
+pero al tratar de trabajar con window en el web worker nos da un error, eso es lo que viene a resolver
+global this con ES11 */
+
+console.log(global); // Seria de metodos o atributos disponibles => Node
+console.log(self); // web worker
+console.log(globalThis);
+```
+**[🡅 Volver a ES11](#qué-se-implementó-en-es11-ecmascript-11)**
+
+## Match All
+```javascript
+const regex = /\b(Apple)+\b/g;
+const fruit = "Apple, Banana, Kiwi, Apple, Orange, etc. etc. etc.";
+
+for (const match of fruit.matchAll(regex)) {
+    console.table(match);
+}
+/*
+┌─────────┬──────────────────────────────────────────────────────┐
+│ (index) │                        Values                        │
+├─────────┼──────────────────────────────────────────────────────┤
+│    0    │                       'Apple'                        │
+│    1    │                       'Apple'                        │
+│  index  │                          0                           │
+│  input  │ 'Apple, Banana, Kiwi, Apple, Orange, etc. etc. etc.' │
+│ groups  │                      undefined                       │
+└─────────┴──────────────────────────────────────────────────────┘
+┌─────────┬──────────────────────────────────────────────────────┐
+│ (index) │                        Values                        │
+├─────────┼──────────────────────────────────────────────────────┤
+│    0    │                       'Apple'                        │
+│    1    │                       'Apple'                        │
+│  index  │                          21                          │
+│  input  │ 'Apple, Banana, Kiwi, Apple, Orange, etc. etc. etc.' │
+│ groups  │                      undefined                       │
+└─────────┴──────────────────────────────────────────────────────┘
+
+El método matchAll() retorna un iterador de todos los resultados de ocurrencia en una cadena de texto
+contra una expresión regular, incluyendo grupos de captura.
+
+Antes de la adición de matchAll a JavaScript, fue posible hacer llamados a regexp.exec (y usar
+expresiones regulares con la bandera /g) en un ciclo para obtener las ocurrencias: */
+
+const regexp = RegExp('foo[a-z]*','g');
+const cadena = 'mesa football, foosball';
+let ocurrencia;
+
+while ((ocurrencia = regexp.exec(cadena)) !== null) {
+    console.log(`Encontrado ${ocurrencia[0]} inicio=${ocurrencia.index} final=${regexp.lastIndex}.`);
+    // salida esperada: "Encontrado football inicio=5 final=13."
+    // salida esperada: "Encontrado foosball inicio=15 final=23."
+}
+
+/* Con matchAll disponible, puedes evitar el ciclo while y exec con /g. Por el contrario, usando matchAll,
+obtienes un iterador con el cual puedes usar con constructores más convenientes for...of, array spread,
+o Array.from(): */
+
+const regexp1 = RegExp('foo[a-z]*','g');
+const cadena1 = 'mesa football, foosball';
+const ocurrencias = cadena1.matchAll(regexp1);
+
+for (const ocurrencia of ocurrencias) {
+    console.log(`Encontrado ${ocurrencia[0]} inicio=${ocurrencia.index} final=${ocurrencia.index +
+    currencia[0].length}.`);
+    // Encontrado football inicio=5 final=13.
+    // Encontrado foosball inicio=15 final=23.
+}
+
+// el iterador ocurrencias es agotado después de la iteración for..of
+// Llama matchAll de nuevo para crear un nuevo iterador */
+
+console.log(Array.from(cadena1.matchAll(regexp1), m => m[0]));
+// Array [ "football", "foosball" ]
+```
+**[🡅 Volver a ES11](#qué-se-implementó-en-es11-ecmascript-11)**
+
+## Dynamic Import
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Import</title>
+</head>
+<body>
+    <button id="btn">Click me</button>
+    <script type="module" src="./06-dynamic-import.js"></script>
+</body>
+</html>
+```
+```javascript
+// module.js
+export function hello () {
+    console.log('Hola mundo');
+}
+```
+```javascript
+/* 06-dynamic-import.js
+dynamic import es una nueva característica de JavaScript que se introdujo en ECMAScript 2020. Esta
+característica permite cargar módulos de forma dinámica en tiempo de ejecución, en lugar de importarlos en
+tiempo de compilación.
+
+El uso de dynamic import se realiza mediante la función import(), que devuelve una promesa que se resuelve
+con el módulo importado. Esto permite cargar módulos solo cuando se necesitan, lo que puede mejorar el
+rendimiento y la usabilidad de la aplicación.
+
+Aquí hay un ejemplo de cómo se puede usar dynamic import en JavaScript: */
+const button = document.getElementById('btn');
+
+button.addEventListener('click', async function() {
+    const module = await import('./module.js');
+    console.log(module); // Serie de metodos y atributos de module
+    module.hello(); // Hola mundo
+});
+
+```
